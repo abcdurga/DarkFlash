@@ -15,10 +15,11 @@
 - (void)openCamera:(CDVInvokedUrlCommand*)command
 {
     CDVPluginResult* pluginResult = nil;
-    NSDictionary* echo = [command.arguments objectAtIndex:0];
-    NSLog("openCamera :: %@",echo);
-    
-    if (echo != nil) {
+    NSDictionary* data = [command.arguments objectAtIndex:0];
+    NSLog("openCamera :: %@",data);
+    NSString* echo = @"inside native ios success";
+
+    if (data != nil) {
         pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:echo];
     } else {
         pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR];

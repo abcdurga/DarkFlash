@@ -37,7 +37,7 @@ public class DarkFlash extends CordovaPlugin {
 
     private void openCamera(JSONArray args, CallbackContext callbackContext) {
         if (args != null) {
-            callbackContext.success("Inside NATIVE JAVA");
+            callbackContext.success("Inside NATIVE JAVA successfully");
         } else {
             callbackContext.error("Expected one non-empty string argument.");
         }
