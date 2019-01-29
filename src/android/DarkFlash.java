@@ -57,16 +57,16 @@ public class DarkFlash extends CordovaPlugin {
            lum += Color.blue(bm.getPixel(200, 200));
            lum = lum/12;
 
-         if (lum<3)
-             tvMain.setText("dark");
+         if (lum<3){
+            tvMain.setText("dark");
              Camera cam = camera;     
             Parameters p = cam.getParameters();
             p.setFlashMode(Parameters.FLASH_MODE_TORCH);
             cam.setParameters(p);
             cam.startPreview();
-        else
-             tvMain.setText("light");    
-
+         }else{
+            tvMain.setText("light");
+         }
             camready = true;
          }
 
