@@ -1,0 +1,16 @@
+{
+  "name": "darkflash",
+  "version": "1.0.0",
+  "description": "Turn on flash if its dark.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "flash",
+    "dark",
+    "ionic"
+  ],
+  "author": "Durga Sriram",
+  "license": "ISC"
+}
