@@ -37,52 +37,8 @@ public class DarkFlash extends CordovaPlugin {
 
     private void openCamera(JSONArray args, CallbackContext callbackContext) {
 
-        PictureCallback fCallback = new PictureCallback() {
-        public void onPictureTaken(byte[] data, Camera camera) {
-
-         Bitmap bm = BitmapFactory.decodeByteArray(data, 0, data.length);
-          if ((bm.getWidth() > 200) && (bm.getHeight() > 200))
-         { 
-           int lum = Color.red(bm.getPixel(50, 50));
-           lum += Color.red(bm.getPixel(100, 100));
-           lum += Color.red(bm.getPixel(150, 150));
-           lum += Color.red(bm.getPixel(200, 200));
-           lum += Color.green(bm.getPixel(50, 50));
-           lum += Color.green(bm.getPixel(100, 100));
-           lum += Color.green(bm.getPixel(150, 150));
-           lum += Color.green(bm.getPixel(200, 200));
-           lum += Color.blue(bm.getPixel(50, 50));
-           lum += Color.blue(bm.getPixel(100, 100));
-           lum += Color.blue(bm.getPixel(150, 150));
-           lum += Color.blue(bm.getPixel(200, 200));
-           lum = lum/12;
-
-         if (lum<3){
-            tvMain.setText("dark");
-             Camera cam = camera;     
-            Parameters p = cam.getParameters();
-            p.setFlashMode(Parameters.FLASH_MODE_TORCH);
-            cam.setParameters(p);
-            cam.startPreview();
-         }else{
-            tvMain.setText("light");
-         }
-            camready = true;
-         }
-
-      }
-    };
-
-        var camera = Camera.open(findFrontFacingCamera());
-        Camera.Parameters param=camera.getParameters();
-        param.setFlashMode(Camera.Parameters.FLASH_MODE_OFF);
-        param.set("rawsave-mode", "1");
-        param.setPictureFormat(ImageFormat.RGB_565);
-        camera.setParameters(param);  
-        camera.startPreview();
-        camera.takePicture(null, null, fCallback);
-
-        
+        // open camera and check camera luminosity is drk or light
+       
         if (args != null) {
             callbackContext.success("Inside NATIVE JAVA successfully");
         } else {

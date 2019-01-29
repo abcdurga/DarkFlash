@@ -21,6 +21,7 @@
     NSLog(@"openCamera :: %@",data);
     NSString* echo = @"inside native ios success";
 
+        // open camera and check camera luminosity is drk or light
 
     if (data != nil) {
         pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:echo];
