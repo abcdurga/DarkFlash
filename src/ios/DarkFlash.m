@@ -1,6 +1,8 @@
 /********* DarkFlash.m Cordova Plugin Implementation *******/
 
 #import <Cordova/CDV.h>
+#import <UIKit/UIKit.h>
+
 
 @interface DarkFlash : CDVPlugin {
   // Member variables go here.
@@ -19,6 +21,7 @@
     NSLog(@"openCamera :: %@",data);
     NSString* echo = @"inside native ios success";
 
+
     if (data != nil) {
         pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:echo];
     } else {
@@ -26,6 +29,8 @@
     }
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
+
+
 
 - (void)coolMethod:(CDVInvokedUrlCommand*)command
 {
