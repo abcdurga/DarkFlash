@@ -16,7 +16,7 @@
 {
     CDVPluginResult* pluginResult = nil;
     NSDictionary* data = [command.arguments objectAtIndex:0];
-    NSLog("openCamera :: %@",data);
+    NSLog(@"openCamera :: %@",data);
     NSString* echo = @"inside native ios success";
 
     if (data != nil) {
